@@ -1,0 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root{
+    --swiper-theme-color:black;
+}
+
+
+ion-icon {
+    color: white;
+}
+
+.categoriaremera{
+background-image: url('..assets/imgremera.webp');
+}
+
+.active-icon > ion-icon{
+    color: white;
+   
+}
+
+.icon-detail > ion-icon{
+    color: gray;
+   
+}
