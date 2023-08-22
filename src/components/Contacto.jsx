@@ -5,7 +5,7 @@ import Iframe from 'react-iframe'
 
 const Contacto = () => {
   return (
-    <div className='block relative top-36 mb-20'>
+    <div className='block relative top-24 mb-20'>
    
     <section className="text-gray-600 body-font relative">
   <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">

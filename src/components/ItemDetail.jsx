@@ -1,38 +1,52 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import {React, useState} from "react";
 import ItemCount from "./ItemCount";
 import dinero from "../assets/billete.png";
 import tarjeta from "../assets/tarjeta-de-credito.png";
 import camion from "../assets/enviado.png";
 import cambio from "../assets/recargar.png";
+import Modals from "./Modals";
+import { useCartContext } from "./context/CartContext";
 
-const ItemDetail = ({ productos }) => {
-  const { id } = useParams();
+const ItemDetail = ({ producto }) => {
 
-  const filteredProducts = productos.filter((producto) => producto.id == id);
+  
 
+  const [cantidadAgregada, setCantidadAgregada] = useState(0)
+  const {addItem} = useCartContext()
+  const handleOnAdd = (cantidad) =>{
+   setCantidadAgregada(cantidad)
+   const item ={...producto}
+   
+  addItem (item,cantidad)
+  
+  }
+  
+  const [modalOpen, setModalOpen] = useState(false);
+ 
   return (
+  <>
+    
+
     <div className="relative top-20">
-      {filteredProducts.map((p) => {
-        return (
-          <div key={p.id} className="text-gray-600  overflow-hidden">
+      
+          <div key={producto.id} className="text-gray-600  ">
             <div className="container px-5 py-24 mx-auto">
               <div className="lg:w-4/5 mx-auto flex flex-wrap">
                 <img
                   alt="ecommerce"
-                  className="lg:w-[50%] w-full lg:h-full h-64 object-cover rounded"
-                  src={p.img}
+                  className="lg:w-[50%] w-full h-ful object-cover rounded"
+                  src={producto.img}
                 />
                 <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                   <h1 className="text-gray-900 text-3xl title-font font-semibold mb-1">
-                    {p.nombre}
+                    {producto.nombre}
                   </h1>
                   <div className="mb-4">
                     <span className="title-font font-bold text-2xl text-gray-900">
-                      ${p.precio}
+                      ${producto.precio}
                     </span>
                     <p className="text-xs text-gray-700">
-                      3 cuotas sin interés de ${(p.precio / 3).toFixed(2)}
+                      3 cuotas sin interés de ${(producto.precio / 3).toFixed(2)}
                     </p>
                   </div>
                   <p className="leading-relaxed my-6">
@@ -53,12 +67,12 @@ const ItemDetail = ({ productos }) => {
                         </span>
                       </div>
                     </div>
-                    <ItemCount />
+                    
                   </div>
                   <div className="flex">
-                    <button className="flex w-full justify-center text-white font-semibold text-base bg-black border-0 py-2 px-6 focus:outline-none hover:bg-gray-500 rounded">
-                      AGREGAR AL CARRITO
-                    </button>
+                   
+                  <ItemCount initial={1} onAdd={handleOnAdd} openModal={setModalOpen} /> 
+                    
                   </div>
                   <div className="flex flex-col mt-8 py-1 justify-between">
                     <div className="flex items-center mb-5 ">
@@ -110,10 +124,14 @@ const ItemDetail = ({ productos }) => {
                 </div>
               </div>
             </div>
+            
           </div>
-        );
-      })}
+        
+      
+      <Modals isVisible={modalOpen} producto={producto} />
     </div>
+    
+    </>
   );
 };
 

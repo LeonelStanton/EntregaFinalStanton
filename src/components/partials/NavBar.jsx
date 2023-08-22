@@ -10,7 +10,7 @@ const NavBar = () => {
   const [heading, setHeading] = useState("");
   const [subHeading, setSubHeading] = useState("");
   return (
-    <nav className="bg-black fixed z-50 w-full ">
+    <nav className="bg-black fixed z-40 w-full top-0">
       <div className="flex items-center font-medium justify-around  ">
         <div className="z-50 py-1 md:w-auto w-full flex justify-between">
           <Link to="/">

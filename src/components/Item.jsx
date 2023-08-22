@@ -14,8 +14,8 @@ const Item = ({id,nombre,precio,img}) => {
         </Link>
       </div>
     </div>
-    <div className='ml-4 h-auto'>
-    <h2 className="mt-3 text-lg font-light capitalize text-slate-800">{nombre}</h2>
+    <div className='ml-4 h-auto py-4'>
+    <h2 className="mt-1 text-lg font-normal capitalize text-slate-800">{nombre}</h2>
     <p className="text-xl mt-2 inline-block font-semibold">{"$"+precio}</p>
     <p className="text-xs text-gray-500">3 cuotas sin interés de ${(precio/3).toFixed(2)}</p>
     </div>

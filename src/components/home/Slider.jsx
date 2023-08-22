@@ -35,9 +35,9 @@ export default function Slider() {
         modules={[Autoplay, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide> <Link to="/category/hombre"> <img src={img5} alt="" className="cursor-pointer" /> </Link> </SwiperSlide>
-        <SwiperSlide> <Link to="/category/mujer"><img src={img6} alt="" className="cursor-pointer"/></Link> </SwiperSlide>
-        <SwiperSlide><Link to="/category/mujer"><img src={img7} alt="" className="cursor-pointer" /></Link> </SwiperSlide>
+        <SwiperSlide> <Link to="/category/Hombre"> <img src={img5} alt="" className="cursor-pointer" /> </Link> </SwiperSlide>
+        <SwiperSlide> <Link to="/category/Mujer"><img src={img6} alt="" className="cursor-pointer"/></Link> </SwiperSlide>
+        <SwiperSlide><Link to="/category/Mujer"><img src={img7} alt="" className="cursor-pointer" /></Link> </SwiperSlide>
       </Swiper>
 
       </div>

@@ -13,7 +13,7 @@ const Seccions = () => {
         <img src={catHombre} alt="" className='w-full h-full object-cover absolute transition duration-500 ease-out hover:scale-105 mix-blend-overlay'/>
             <div className='flex flex-col items-center content-center absolute brightness-120'>
               
-              <Link to="/category/hombre">
+              <Link to="/category/Hombre">
               <button className='relative mt-4 text-xs font-300 tracking-[.30em] bg-transparent hover:bg-neutral-900 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded'>VER CATEGORIA</button>
               </Link>
             </div>
@@ -22,7 +22,7 @@ const Seccions = () => {
           <img src={catMujer} alt="" className='w-full h-full object-cover absolute transition duration-500 ease-out hover:scale-105 mix-blend-overlay'/>
             <div className='flex flex-col items-center content-center absolute place-content-center'>
            
-             <Link to="/category/mujer">
+             <Link to="/category/Mujer">
               <button className='relative mt-4  text-xs font-300 tracking-[.30em] bg-transparent hover:bg-neutral-950 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded'>VER CATEGORIA</button>
               </Link>
             </div>
@@ -30,7 +30,7 @@ const Seccions = () => {
           <div  className='md:w-[30%] md:h-[80%] flex flex-col items-center justify-center  bg-center bg-no-repeat bg-cover object-cover w-96 h-96 relative hover:opacity-80 cursor-pointer shadow-lg shadow-slate-700 overflow-hidden'>
           <img src={catNiños} alt="" className='w-full h-full object-cover absolute transition duration-500 ease-out hover:scale-105 mix-blend-overlay'/>
             <div className='flex flex-col items-center content-center'>
-            <Link to="/category/niño">
+            <Link to="/category/Niño">
               <button className='relative mt-4 text-xs font-300 tracking-[.30em] bg-transparent hover:bg-neutral-900 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded'>VER CATEGORIA</button>
               </Link>
             </div>
@@ -41,9 +41,7 @@ const Seccions = () => {
 
     </div>
     
-    <div>
-    <h1 className='text-3xl font-extrabold tracking-[.25em] ml-40 mt-14'>PRODUCTOS DESTACADOS</h1>
-    </div>
+    
     </>
   )
 }

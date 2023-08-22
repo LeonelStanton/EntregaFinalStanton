@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="bg-black p-2 items-center absolute mt-32">
+    <div className="bg-black p-2 items-center relative bottom-0 mt-32">
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:px-28 justify-around gap-5">
       <div className="md:flex flex-col justify-between mx-auto ">
           <div className="text-[#747474] text-[15px] font-[550] leading-7 tracking-wide">
@@ -101,20 +101,20 @@ const Footer = () => {
             </h1>
           </div>
           <div className="leading-7 mt-4 text-[15px] font-[500]">
-            <p className="space-x-3 hover:text-[#cacaca]">
+            <div className="space-x-3 hover:text-[#cacaca]">
               {" "}
               <ion-icon name="call-outline"></ion-icon>{" "}
               <a href="#">123-456-7890</a>{" "}
-            </p>
-            <p className="space-x-3 hover:text-[#cacaca]">
+            </div>
+            <div className="space-x-3 hover:text-[#cacaca]">
               {" "}
               <ion-icon name="mail-outline"></ion-icon>
               <a href="#">example@email.com</a>{" "}
-            </p>
-            <p className="space-x-3 hover:text-[#cacaca]">
+            </div>
+            <div className="space-x-3 hover:text-[#cacaca]  ">
               <ion-icon name="location-outline"></ion-icon>
-              <a href="#">Springfield,Massachusetts</a>{" "}
-            </p>
+              <a href="#">Springfield,Massachusetts</a>
+            </div>
           </div>
           <div className="flex justify-left mt-4 text-[#afafaf] text-center text-xl space-x-3">
             <p>
@@ -152,7 +152,7 @@ const Footer = () => {
         <p>&nbsp;</p>
         <p>&nbsp;</p>
       </div>
-      <div className="flex justify-center p-1 text-[#afafaf] text-center text-sm space-x-3 ">
+      <div className="flex justify-center p-1 text-[#afafaf] text-center text-sm ">
         <p> ©Copyright 2023. Todos los derechos reservados. </p>
       </div>
       </div>
