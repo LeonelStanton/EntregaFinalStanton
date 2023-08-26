@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="bg-black p-2 items-center relative bottom-0 mt-32">
+    <div className="bg-black p-2 items-center relative  mt-32">
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:px-28 justify-around gap-5">
       <div className="md:flex flex-col justify-between mx-auto ">
           <div className="text-[#747474] text-[15px] font-[550] leading-7 tracking-wide">

@@ -1,8 +1,7 @@
-import React from "react";
 import ItemList from "./ItemList";
 import FadeLoader from "react-spinners/FadeLoader";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import React,{ useState, useEffect } from "react";
 import {
   collection,
   getDocs,
@@ -65,17 +64,17 @@ const ItemListContainer = () => {
 
       :
       (
-      <div className="grid grid-cols-3 mx-20 relative top-24 ">
-        <ItemList productos={products} />
+      <div className="relative mt-28 z-10 h-full">
+        <ItemList productos={products} categoria={categoria} />
       </div>
     )
   ) : (
     <div>
-      <h1 className="text-3xl font-extrabold tracking-[.25em] ml-40 mt-14">
+      <h1 className="text-3xl font-extrabold tracking-[.25em] ml-32 mt-14">
         PRODUCTOS DESTACADOS
       </h1>
 
-      <div className="grid grid-cols-3 mx-20 relative top-5">
+      <div className="">
         <ItemList productos={products} />
       </div>
     </div>

@@ -4,6 +4,7 @@ import Logo from "../../assets/Logo.png";
 import lupa from "../../assets/lupa.png";
 import { links } from "./Mylinks";
 import { NavLink,Link } from "react-router-dom";
+import Search from "./Search";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
@@ -85,20 +86,7 @@ const NavBar = () => {
           </li>
         </ul>
         <div className="md:flex hidden ">
-          <div className="mx-auto max-w-[12rem] pl-0 py-5 ">
-            <form
-              action=""
-              className="relative mx-auto w-auto text-white bg-black"
-            >
-              <input
-                type="search"
-                className="peer cursor-pointer relative z-10 h-10 w-10 bg-transparent pl-14 outline-none focus:w-full focus:cursor-text focus:border-b-2 focus:border-white focus:pl-[70px] focus:pr-4"
-              />
-              <div className="absolute flex justify-center active-icon inset-y-0 my-[6px] h-[1.9rem] w-[3.8rem]  border-r-2 border-b-0  border-transparent px-3.5 peer-focus:border-white ">
-                <img src={lupa} alt="" />
-              </div>
-            </form>
-          </div>
+         <Search/>
           <CartWidget />
         </div>
         {/* Responsive*/}

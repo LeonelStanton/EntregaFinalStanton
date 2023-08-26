@@ -53,14 +53,13 @@ const Checkout = () => {
 
   const comprar = (data) => {
     setLoading(true);
-    
-
+  
     const pedido = {
       cliente: data,
       productos: cart,
       total: totalPrice(),
     };
-    console.log(pedido);
+    
     const db = getFirestore();
     const pedidosRef = collection(db, "pedidos");
 

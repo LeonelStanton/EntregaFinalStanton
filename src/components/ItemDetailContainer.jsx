@@ -1,9 +1,7 @@
-import React from 'react'
 import ItemDetail from "./ItemDetail"
-import  { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
-import Error404 from './Error404';
 import FadeLoader from "react-spinners/FadeLoader";
 
 

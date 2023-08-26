@@ -1,8 +1,7 @@
-import React from "react";
 import fondo2 from "../../assets/fondo2.png";
 import fondo1 from "../../assets/fondo1.jpg";
 import Item from "../Item";
-import { useState, useEffect } from "react";
+import React,{ useState, useEffect } from "react";
 import {
   collection,
   getDocs,
