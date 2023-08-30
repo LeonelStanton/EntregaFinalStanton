@@ -8,16 +8,20 @@ import {
   getFirestore,
   query,
   where,} from "firebase/firestore";
+ 
 
 const ItemListContainer = () => {
 
 
   const { categoria } = useParams();
   const [products, setProducts] = useState([]);
+  const [loading,setLoading]=useState(true)
 
   useEffect(() => {
+    setLoading(true)
     const querydb = getFirestore();
     const queryCollection = collection(querydb, "productos");
+    
     if (categoria) {
       const queryFilter = query(
         queryCollection,
@@ -27,7 +31,14 @@ const ItemListContainer = () => {
         setProducts(
           res.docs.map((product) => ({ id: product.id, ...product.data() }))
         )
-      );
+      )
+      .finally(() => 
+            setTimeout(()=>{
+              setLoading(false)
+             
+              
+            },500)
+      )
     } else {
       getDocs(queryCollection).then((res) =>
         setProducts(
@@ -35,20 +46,25 @@ const ItemListContainer = () => {
             .map((product) => ({ id: product.id, ...product.data() }))
             .slice(7, 13)
         )
-      );
+      )
+      .finally(() => 
+      setTimeout(()=>{
+        setLoading(false)
+       
+        
+      },500)
+)
     }
   }, [categoria]);
 
-  const [loading,setLoading]=useState(false)
-    useEffect(()=>{
-    setLoading(true)
-   setTimeout(()=>{
-      setLoading(false)
-      
-    },1000)
-   },[] )
+ 
+  return (
+     
 
-  return categoria ? (
+     categoria ? 
+     
+     ( 
+         
     loading? (
 
       <div className="z-100 relative top-24 h-screen w-full flex items-center justify-center">
@@ -68,17 +84,22 @@ const ItemListContainer = () => {
         <ItemList productos={products} categoria={categoria} />
       </div>
     )
-  ) : (
-    <div>
-      <h1 className="text-3xl font-extrabold tracking-[.25em] ml-32 mt-14">
+  ) 
+  :
+   (
+    <div className="flex flex-col items-center px-10">
+      <h1 className="text-3xl font-extrabold tracking-[.25em]  my-16 ">
         PRODUCTOS DESTACADOS
       </h1>
 
-      <div className="">
+      
         <ItemList productos={products} />
-      </div>
+      
     </div>
-  );
-};
+  )
+  
+  )
+ 
+}
 
 export default ItemListContainer;

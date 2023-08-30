@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import CartWidget from "../CartWidget";
+import CartWidget from "./CartWidget";
 import Logo from "../../assets/Logo.png";
-import lupa from "../../assets/lupa.png";
 import { links } from "./Mylinks";
 import { NavLink,Link } from "react-router-dom";
 import Search from "./Search";
@@ -14,8 +13,8 @@ const NavBar = () => {
     <nav className="bg-black fixed z-40 w-full top-0">
       <div className="flex items-center font-medium justify-around  ">
         <div className="z-50 py-1 md:w-auto w-full flex justify-between">
-          <Link to="/">
-          <img src={Logo} alt="logo" className="md:cursor-pointer h-20 p-3" />
+          <Link to="/" >
+          <img src={Logo} alt="logo" className="md:cursor-pointer h-20 md:h-16 lg:h-20 p-3" />
           </Link>
           <div
             className="text-3xl md:hidden flex items-center pr-6 cursor-pointer"
@@ -24,7 +23,7 @@ const NavBar = () => {
             <ion-icon name={`${open ? "close" : "menu"}`}></ion-icon>
           </div>
         </div>
-        <ul className="md:flex hidden uppercase items-center gap-8  text-white text-base">
+        <ul className="md:flex hidden uppercase items-center gap-8 md:gap-2 lg:gap-8  text-white text-base md:text-sm lg:text-base">
           <li>
             <NavLink
               to="/"
@@ -86,9 +85,14 @@ const NavBar = () => {
           </li>
         </ul>
         <div className="md:flex hidden ">
-         <Search/>
-          <CartWidget />
+        <div className="lg:flex hidden">
+        
+        <Search/>
         </div>
+        <CartWidget />
+       
+        </div>
+        
         {/* Responsive*/}
         <ul
           className={`
@@ -96,29 +100,30 @@ const NavBar = () => {
         duration-500 ${open ? "left-0" : "left-[-100%]"}
         `}
         >
-          <li>
-            <a
+          <li >
+            <Link 
               to="/"
+              onClick={() => setOpen(!open)}
               className="py-7 px-3 inline-block cursor-pointer hover:text-gray-300"
             >
               Inicio
-            </a>
+            </Link>
           </li>
           {links.map((link) => (
             <div className="z-20" key={link.name}>
               <div className="px-3 text-left group">
                 <h1
                   className="py-7 flex justify-between items-center md:pr-0 pr-5 group hover:text-gray-300 cursor-pointer"
-                  onClick={() => {
+                  
+                >
+                  <NavLink to={`/category/${link.name}`} onClick={() => setOpen(!open)}>{link.name}</NavLink>
+
+                  <span className="text-xl md:hidden inline" onClick={() => {
                     heading !== link.name
                       ? setHeading(link.name)
                       : setHeading("");
                     setSubHeading("");
-                  }}
-                >
-                  <NavLink to={`/category/${link.name}`}>{link.name}</NavLink>
-
-                  <span className="text-xl md:hidden inline">
+                  }}>
                     <ion-icon
                       name={`${
                         heading === link.name ? "chevron-up" : "chevron-down"
@@ -180,14 +185,17 @@ const NavBar = () => {
             </div>
           ))}
           <li>
-            <a
+            <Link
               to="/contacto"
+              onClick={() => setOpen(!open)}
               className="py-7 px-3 inline-block cursor-pointer hover:text-gray-300"
             >
               Contacto
-            </a>
+            </Link>
           </li>
+          <li onClick={() => setOpen(!open)}>
           <CartWidget />
+          </li>
         </ul>
       </div>
     </nav>

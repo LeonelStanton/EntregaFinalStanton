@@ -23,6 +23,7 @@ const schema = yup.object({
       /^[a-zA-Z0-9._]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/,
       "El email es invalido"
     ),
+   confirmEmail: yup.string().oneOf([yup.ref("email")],"Los emails no coinciden") , 
   telefono: yup
     .string()
     .required("El telefono es un campo requerido")
@@ -30,10 +31,10 @@ const schema = yup.object({
 });
 
 const Checkout = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
+    
     setTimeout(() => {
       setLoading(false);
     }, 1000);
@@ -51,6 +52,7 @@ const Checkout = () => {
     resolver: yupResolver(schema),
   });
 
+  const fecha = new Date();
   const comprar = (data) => {
     setLoading(true);
   
@@ -58,6 +60,7 @@ const Checkout = () => {
       cliente: data,
       productos: cart,
       total: totalPrice(),
+      fecha: fecha, 
     };
     
     const db = getFirestore();
@@ -71,17 +74,17 @@ const Checkout = () => {
 
   if (pedidoId) {
     return (
-      <div className="h-screen relative top-20 mb-32 flex justify-center items-center">
-        <div className=" bandera flex justify-between w-3/5">
-          <div className="p-5 m-auto">
+      <div className="h-screen relative top-20 mb-32 flex justify-center items-center w-full  ">
+        <div className=" bandera flex justify-between w-full h-fit md:w-3/5">
+          <div className="p-5 m-auto flex flex-col justify-center items-center w-2/3">
             <h1 className="text-3xl text-black font-normal tracking-wide mb-1">
               Muchas gracias por tu compra
             </h1>
-            <p className="text-xl text-black font-light">Tu número de pedido es : <span className="font-semibold">{pedidoId}</span> </p>
+            <p className="text-xl text-black font-light">Tu número de orden es : <span className="font-semibold">{pedidoId}</span> </p>
             
           </div>
-          <div className="ml-2 w-1/3 h-fit" >
-          <img src={messi} alt="" className=""/>
+          <div className="ml-2 w-1/3 flex" >
+          <img src={messi} alt="" className="w-auto h-full "/>
           </div>
         </div>
       </div>
@@ -94,60 +97,76 @@ const Checkout = () => {
     </div>
   ) : (
     <div className="bg-white  flex justify-center relative top-32 h-full">
-      <div className="bg-white shadow-lg m-8 w-3/5 grid lg:flex justify-center rounded-xl h-full mb-32">
-        <form className="w-3/4 lg:w-2/3" onSubmit={handleSubmit(comprar)}>
+      <div className="bg-white shadow-lg m-8 w-4/5 lg:flex-row flex-col flex justify-center rounded-xl h-full mb-32">
+        <form className="w-full lg:w-2/4 m-auto " onSubmit={handleSubmit(comprar)}>
           <div className="text-2xl  font-semibold text-black m-6">
             Finalizar Compra
           </div>
-          <div className="flex lg:flex-row flex-col">
+          <div className="flex lg:flex-row flex-col  ">
             <div className="m-6">
               <p className="text-base text-stone-400 mb-2">Ingresá tu nombre</p>
               <input
                 type="text"
                 {...register("nombre")}
-                className="border-b-2 border-stone-400 text-neutral-900 w-44 outline-none bg-inherit"
+                className="border-b-2 border-stone-400 text-neutral-900 lg:w-44 w-3/4 outline-none bg-inherit"
               />
               <p className="text-xs font-light text-red-600 mt-1">
                 {errors.nombre?.message}
               </p>
+              <p className="text-base text-stone-400 mt-6  mb-2">
+                Ingresa tu apellido
+              </p>
+              <input
+                type="text"
+                {...register("apellido")}
+                className="border-b-2 border-stone-400 text-neutral-900 lg:w-44 w-3/4 outline-none"
+              />
+              <p className="text-xs font-light text-red-600 mt-1">
+                {errors.apellido?.message}
+              </p>
+              
+            </div>
+            <div className="m-6">
+            <p className="text-base text-stone-400 mb-2">
+              Ingresá tu teléfono
+            </p>
+            <input
+              type="phone"
+              {...register("telefono")}
+              className="border-b-2 border-stone-400 text-neutral-900 lg:w-44 w-3/4 outline-none"
+            />
+            <p className="text-xs font-light text-red-600 mt-1">
+              {errors.telefono?.message}
+            </p>
+              <div className="my-6 mx-0">
               <p className="text-base text-stone-400 mt-6 mb-2">
                 Ingresá tu e-mail
               </p>
               <input
                 type="text"
                 {...register("email")}
-                className="border-b-2 border-stone-400 text-neutral-900 w-44 outline-none"
+                className="border-b-2 border-stone-400 text-neutral-900 lg:w-44 w-3/4 outline-none"
               />
               <p className="text-xs font-light text-red-600 mt-1">
                 {errors.email?.message}
               </p>
+              
             </div>
-            <div className="m-6">
-              <p className="text-base text-stone-400 mb-2">
-                Ingresa tu apellido
+            </div>
+          </div>
+          <div className="m-6 items-end">
+          <p className="text-base text-stone-400 mb-2">
+                Confirmar e-mail
               </p>
               <input
                 type="text"
-                {...register("apellido")}
-                className="border-b-2 border-stone-400 text-neutral-900 w-44 outline-none"
+                {...register("confirmEmail")}
+                className="border-b-2 border-stone-400 text-neutral-900 lg:w-44 w-3/4 outline-none"
               />
               <p className="text-xs font-light text-red-600 mt-1">
-                {errors.apellido?.message}
+                {errors.confirmEmail?.message}
               </p>
-            </div>
-          </div>
-          <div className="ml-6 items-end">
-            <p className="text-base text-stone-400 mt-6 mb-2">
-              Ingresá tu teléfono
-            </p>
-            <input
-              type="phone"
-              {...register("telefono")}
-              className="border-b-2 border-stone-400 text-neutral-900 w-44 outline-none"
-            />
-            <p className="text-xs font-light text-red-600 mt-1">
-              {errors.telefono?.message}
-            </p>
+           
             <div className="flex py-7">
               <button
                 type="submit"

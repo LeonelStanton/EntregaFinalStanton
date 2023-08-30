@@ -11,6 +11,7 @@
 }
 
 
+
 ion-icon {
     color: white;
 }
@@ -57,26 +58,25 @@ input[type="range"] {
      width: 15rem;
  }
  
- /* Removes default focus */
+
  input[type="range"]:focus {
    outline: none;
  }
  
- /***** Chrome, Safari, Opera and Edge Chromium styles *****/
- /* slider track */
+
  input[type="range"]::-webkit-slider-runnable-track {
     background-color: #E3E3E3;
     border-radius: 0.5rem;
     height: 0.5rem;  
  }
  
- /* slider thumb */
+
  input[type="range"]::-webkit-slider-thumb {
-   -webkit-appearance: none; /* Override default look */
+   -webkit-appearance: none; 
     appearance: none;
-    margin-top: -12px; /* Centers thumb on the track */
+    margin-top: -12px; 
  
-    /*custom styles*/
+    
     background-color: black;
     height: 2rem;
     width: 1rem;
@@ -88,20 +88,19 @@ input[type="range"] {
    outline-offset: 0.125rem; 
  }
  
- /******** Firefox styles ********/
- /* slider track */
+
  input[type="range"]::-moz-range-track {
     background-color: #E3E3E3;
     border-radius: 0.5rem;
     height: 0.5rem;
  }
  
- /* slider thumb */
- input[type="range"]::-moz-range-thumb {
-    border: none; /*Removes extra border that FF applies*/
-    border-radius: 0; /*Removes default border-radius that FF applies*/
  
-    /*custom styles*/
+ input[type="range"]::-moz-range-thumb {
+    border: none;
+    border-radius: 0; 
+ 
+
     background-color: black;
     height: 2rem;
     width: 1rem;
@@ -113,3 +112,42 @@ input[type="range"] {
    outline-offset: 0.125rem; 
  }
   
+ .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+   
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   
+  }
+  
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 47.00%; /* Proporción de aspecto 16:9 (9 / 16 * 100) */
+    overflow: hidden;
+}
+
+.video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

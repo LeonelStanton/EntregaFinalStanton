@@ -1,7 +1,7 @@
 import React from "react";
-import bolsa from "../assets/bolsadef.png";
+import bolsa from "../../assets/bolsadef.png";
 import { Link } from "react-router-dom";
-import { useCartContext } from "./context/CartContext";
+import { useCartContext } from "../context/CartContext";
 
 const CartWidget = () => {
   const {totalProducts} = useCartContext()

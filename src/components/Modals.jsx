@@ -9,9 +9,9 @@ function Modals({ isVisible, producto }) {
       
           <div
             key={producto.id}
-            className="fixed w-screen h-screen top-10 bg-gray-400 bg-opacity-50 backdrop-blur-sm inset-0 flex justify-center items-center"
+            className="fixed z-50 h-screen bg-gray-400 bg-opacity-50 backdrop-blur-sm inset-0 flex justify-center items-center"
           >
-            <div className="w-2/5 h-fit rounded-lg bg-white shadow-md flex flex-col p-4">
+            <div className="md:w-2/5 w-4/5 h-fit rounded-lg bg-white shadow-md flex flex-col p-4">
               <h1 className="text-base font-bold m-auto">
                 AGREGASTE UN PRODUCTO A TU BOLSA DE COMPRAS
               </h1>

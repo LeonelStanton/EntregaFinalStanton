@@ -19,7 +19,7 @@ import {Autoplay, Pagination} from 'swiper/modules';
 export default function Slider() {
   return (
     <>
-    <div  className="relative top-[86px]">
+    <div  className="block mt-[86px]">
       <Swiper 
       slidesPerView={1}
         spaceBetween={30}

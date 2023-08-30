@@ -10,6 +10,7 @@ const ItemList = ({ productos, categoria }) => {
     category: "all",
     minPrice: 150,
   });
+  
 
   const [minPrice, setMinPrice] = useState(0);
   const handleChangeMinPrice = (event) => {
@@ -48,7 +49,7 @@ const ItemList = ({ productos, categoria }) => {
       <div className=" mb-24 ">
         <div className="font-medium text-base">
           {categoria == "Hombre" && (
-            <div className="flex  justify-center gap-20 items-center">
+            <div className="flex  justify-center gap-20 items-center mb-10 md:flex-row flex-col">
               <div className="relative">
                 <label htmlFor="category" className="mr-4">
                   Categoría :
@@ -65,13 +66,13 @@ const ItemList = ({ productos, categoria }) => {
                   <option value="camisas">Camisas</option>
                 </select>
               </div>
-              <div className="flex gap-5">
+              <div className="flex gap-5 p-4 ">
                 <label htmlFor="precio">Precio a partir de:</label>
                 <input
                   type="range"
                   id="precio"
                   min="0"
-                  max="7999"
+                  max="8999"
                   onChange={handleChangeMinPrice}
                   value={minPrice}
                   className="rango"
@@ -81,7 +82,7 @@ const ItemList = ({ productos, categoria }) => {
             </div>
           )}
           {categoria == "Mujer" && (
-           <div className="flex  justify-center gap-20 items-center">
+           <div className="flex  justify-center gap-20 items-center mb-10 md:flex-row flex-col">
            <div className="relative">
              <label htmlFor="category" className="mr-4">
                Categoría :
@@ -102,7 +103,7 @@ const ItemList = ({ productos, categoria }) => {
                
              </select>
            </div>
-           <div className="flex gap-5">
+           <div className="flex gap-5 p-4 ">
              <label htmlFor="precio">Precio a partir de:</label>
              <input
                type="range"
@@ -118,7 +119,7 @@ const ItemList = ({ productos, categoria }) => {
          </div>
           )}
           {categoria == "Niño" && (
-            <div className="flex  justify-center gap-20 items-center">
+            <div className="flex  justify-center gap-20 items-center mb-10 md:flex-row flex-col">
             <div className="relative">
               <label htmlFor="category" className="mr-4">
                 Categoría :
@@ -133,7 +134,7 @@ const ItemList = ({ productos, categoria }) => {
                 
               </select>
             </div>
-            <div className="flex gap-5">
+            <div className="flex gap-5 p-4 ">
               <label htmlFor="precio">Precio a partir de:</label>
               <input
                 type="range"
@@ -149,9 +150,11 @@ const ItemList = ({ productos, categoria }) => {
           </div>
           )}
         </div>
-        <div className="grid grid-cols-3 mx-16 ">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 items-center grid-cols-1 gap-16 px-16">
+          
           {filteredProducts.map((p) => {
             return (
+              
               <Item
                 key={p.id}
                 id={p.id}
@@ -159,6 +162,7 @@ const ItemList = ({ productos, categoria }) => {
                 precio={p.precio}
                 img={p.img}
               />
+             
             );
           })}
         </div>

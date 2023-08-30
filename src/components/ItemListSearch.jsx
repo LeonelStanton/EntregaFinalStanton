@@ -5,12 +5,13 @@ import FadeLoader from "react-spinners/FadeLoader";
 import Item from "./Item";
 
 const ItemListSearch = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+ 
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1400);
+    }, 1000);
   }, []);
   const location = useLocation();
 
@@ -35,7 +36,7 @@ const ItemListSearch = () => {
       <h1 className="text-3xl font-extrabold  ml-32 mb-10">
         Se encontraron resultados:
       </h1>
-      <div className="grid grid-cols-3 mx-16">
+      <div className="grid grid-cols-3 px-16 gap-16">
         {filteredProducts.map((p) => {
           return (
             <Item
