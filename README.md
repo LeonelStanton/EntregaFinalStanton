@@ -6,7 +6,8 @@ El carrito es dinámico durante toda la experiencia y su valor es mutable, una v
 
 # Vista Previa
 
-https://github.com/LeonelStanton/EntregaFinalStanton/assets/117367216/eeef3479-26be-47e7-b5c4-c61cd09f8350
+![gifdef-ecommerce](https://github.com/LeonelStanton/EntregaFinalStanton/assets/117367216/0a17aea9-1e8f-459b-a974-47bbb329781d)
+
 
 ## Librerías y npms utilizados
 
