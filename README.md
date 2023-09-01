@@ -4,6 +4,9 @@ El enfoque utilizado fue lograr un e-commerce de un local de ropa lo más fiel p
 También se le agregó una barra de búsqueda para que el usuario tenga más interacción y pueda ingresar el tipo de prenda que desea.
 El carrito es dinámico durante toda la experiencia y su valor es mutable, una vez que se eligieron los productos deseados y se toca el botón comprar el usuario es dirigido a un formulario que tiene validación en todos los campos. Finalmente, el usuario recibirá una id con la orden de su pedido.
 
+# Vista Previa
+
+https://github.com/LeonelStanton/EntregaFinalStanton/assets/117367216/eeef3479-26be-47e7-b5c4-c61cd09f8350
 
 ## Librerías y npms utilizados
 
