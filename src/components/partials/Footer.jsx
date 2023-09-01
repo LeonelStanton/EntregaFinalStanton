@@ -20,12 +20,9 @@ const Footer = () => {
             </h1>
           </div>
           <div className="flex flex-col">
-        
             <Link to="/" className="hover:text-[#cacaca]" href="#">
               Inicio
             </Link>
-           
-         
             <Link
               to="/category/hombre"
               className="hover:text-[#cacaca]"
@@ -33,8 +30,6 @@ const Footer = () => {
             >
               Hombres
             </Link>
-          
-          
             <Link
               to="/category/mujer"
               className="hover:text-[#cacaca]"
@@ -42,29 +37,25 @@ const Footer = () => {
             >
               Mujeres
             </Link>{" "}
-         
             <Link to="/category/niño" className="hover:text-[#cacaca]" href="#">
               Niños
             </Link>{" "}
-        
-          
             <Link to="/contacto" className="hover:text-[#cacaca]" href="#">
               Contacto
             </Link>{" "}
-         
           </div>
         </div>
 
-        <div className= "  text-[#747474] text-[15px] font-[550] leading-7 tracking-wide  w-3/4 md:w-full flex flex-col items-center md:block">
+        <div className="  text-[#747474] text-[15px] font-[550] leading-7 tracking-wide  w-3/4 md:w-full flex flex-col items-center md:block">
           <div className="mb-10">
             <h1 className="  text-white uppercase font-normal tracking-wider underline underline-offset-[12px] decoration-red-500/90">
               {" "}
               MEDIOS DE PAGO
             </h1>
           </div>
-         <div className="md:pr-8">
+          <div className="md:pr-8">
             <img src={medios} alt="" />
-            </div>
+          </div>
         </div>
 
         <div className="  text-[#6d6d6d] font-[650] text-[16px] leading-7  w-3/4 md:w-full flex flex-col items-center md:block">
@@ -75,7 +66,8 @@ const Footer = () => {
           </div>
           <div className="md:pr-12 md:pl-0 px-14 text-left">
             <p>
-            Somos una empresa con mas de 80 años en el mercado.Nuestro objetivo es acercarles la mejor calidad al precio mas bajo
+              Somos una empresa con mas de 80 años en el mercado.Nuestro
+              objetivo es acercarles la mejor calidad al precio mas bajo
             </p>
           </div>
         </div>
@@ -104,7 +96,6 @@ const Footer = () => {
           </div>
           <div className="flex justify-left mt-4 text-[#afafaf] text-center text-xl space-x-3">
             <p>
-              
               <a
                 href="#"
                 className="w-10 h-10 bg-[#474747] hover:text-[#3b5998] transform ease-in-out duration-500 hover:bg-white rounded-full inline-block pt-[7px]"

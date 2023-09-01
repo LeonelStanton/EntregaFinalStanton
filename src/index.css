@@ -141,7 +141,7 @@ input[type="range"] {
   .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 47.00%; /* Proporción de aspecto 16:9 (9 / 16 * 100) */
+    padding-bottom: 47.00%; 
     overflow: hidden;
 }
 

@@ -30,7 +30,6 @@ function App() {
      
          <Route exact path="/" element={<Home/>} /> 
          <Route exact path="/category/:categoria" element={<ItemListContainer/>}/>
-         
          <Route exact path="/search" element={<ItemListSearch/>}/>
          <Route exact path="/item/:id" element={<ItemDetailContainer/>}/>
          <Route exact path="/contacto" element={<Contacto/>} />

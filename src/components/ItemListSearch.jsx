@@ -6,7 +6,7 @@ import Item from "./Item";
 
 const ItemListSearch = () => {
   const [loading, setLoading] = useState(true);
- 
+
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {

@@ -13,13 +13,14 @@ const Error404 = () => {
           Lo sentimos, la pagina que busca no ha sido encontrada
         </p>
         <div className="flex space-x-4 items-center justify-start mt-10">
-          
           <Link to="/">
             <div className="bg-black w-20 h-10 px-4 py-2 text-white font-medium border-2 border-gray-400 hover:scale-105 cursor-pointer">
               <ion-icon name="arrow-back-sharp"></ion-icon>
             </div>
           </Link>
-          <div className="text-sm font-medium text-stone-500">Volver al inicio</div>
+          <div className="text-sm font-medium text-stone-500">
+            Volver al inicio
+          </div>
         </div>
       </div>
     </main>

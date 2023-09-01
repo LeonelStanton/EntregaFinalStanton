@@ -3,17 +3,17 @@ import img6 from "../../assets/slider2.webp"
 import img7 from "../../assets/slider3.webp"
 import { Link } from "react-router-dom"
 import React from 'react';
-// Import Swiper React components
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 
 
-// import required modules
+
 import {Autoplay, Pagination} from 'swiper/modules';
 
 export default function Slider() {

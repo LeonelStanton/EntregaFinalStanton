@@ -3,10 +3,9 @@ import React from "react";
 import Iframe from "react-iframe";
 
 const Contacto = () => {
-  return ( 
-    
+  return (
     <div className="block relative top-24 mb-20">
-     <section className="text-gray-600 h-auto relative">
+      <section className="text-gray-600 h-auto relative">
         <div className="px-5 py-24 flex flex-col lg:flex-row">
           <div className=" bg-gray-300 rounded-lg h-96 lg:h-auto overflow-hidden lg:mr-5 p-10 flex items-end justify-start relative">
             <Iframe
@@ -112,7 +111,6 @@ const Contacto = () => {
         </div>
       </section>
     </div>
-   
   );
 };
 
