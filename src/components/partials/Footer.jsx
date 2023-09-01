@@ -12,8 +12,8 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="bg-black p-2 items-center relative  bottom-0 mt-32">
-      <div className="mt-4 grid grid-cols-1 md:grid-cols-2 md:px-32 lg:grid-cols-4  gap-5 md:justify-around justify-items-center mx-auto md:gap-10 ">
-        <div className="text-[#747474] text-[15px] font-[550] leading-7 tracking-wide  w-3/4 md:w-full flex flex-col items-center md:block">
+      <div className="mt-4 grid grid-cols-1 md:grid-cols-2 px-5 pl-0 md:pl-24 lg:px-20  lg:grid-cols-4  gap-5 md:justify-around justify-items-center mx-auto md:gap-10 ">
+        <div className="  text-[#747474] text-[15px] font-[550] leading-7 tracking-wide  w-3/4 md:w-full flex flex-col items-center md:block">
           <div className=" mb-10 ">
             <h1 className="text-white font-sans uppercase font-normal tracking-wider underline underline-offset-[12px] decoration-red-500/90">
               Navegacion{" "}
@@ -55,7 +55,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="text-[#747474] text-[15px] font-[550] leading-7 tracking-wide  w-3/4 md:w-full flex flex-col items-center md:block">
+        <div className= "  text-[#747474] text-[15px] font-[550] leading-7 tracking-wide  w-3/4 md:w-full flex flex-col items-center md:block">
           <div className="mb-10">
             <h1 className="  text-white uppercase font-normal tracking-wider underline underline-offset-[12px] decoration-red-500/90">
               {" "}
@@ -67,7 +67,7 @@ const Footer = () => {
             </div>
         </div>
 
-        <div className="text-[#6d6d6d] font-[650] text-[16px] leading-7  w-3/4 md:w-full flex flex-col items-center md:block">
+        <div className="  text-[#6d6d6d] font-[650] text-[16px] leading-7  w-3/4 md:w-full flex flex-col items-center md:block">
           <div className="flex mb-10">
             <h1 className="text-white  uppercase font-normal tracking-wider underline underline-offset-[12px] decoration-red-500/90">
               ¿Quienes Somos?{" "}
@@ -80,14 +80,14 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="text-[#797878] text-[15px] font-[550] leading-6 tracking-wide w-3/4 md:w-full flex flex-col items-center md:block">
+        <div className="  text-[#797878] text-[15px] font-[550] leading-6 tracking-wide w-3/4 md:w-full flex flex-col items-center md:block">
           <div className=" mb-10">
             <h1 className="text-white uppercase font-normal tracking-wider underline underline-offset-[12px] decoration-red-500/90">
               CONTACTANOS{" "}
             </h1>
           </div>
-          <div className="leading-7 mt-4 text-[15px] font-[500]  md:px-0 ">
-            <div className=" hover:text-[#cacaca] ">
+          <div className="lg:leading-7 leading-20 mt-4 text-[15px] font-[500]  md:px-0 ">
+            <div className=" hover:text-[#cacaca] space-x-3">
               {" "}
               <ion-icon name="call-outline"></ion-icon>{" "}
               <a href="#">123-456-7890</a>{" "}
@@ -99,7 +99,7 @@ const Footer = () => {
             </div>
             <div className="space-x-3 hover:text-[#cacaca]  ">
               <ion-icon name="location-outline"></ion-icon>
-              <a href="#">Springfield,Massachusetts</a>
+              <a href="#">Springfield,USA</a>
             </div>
           </div>
           <div className="flex justify-left mt-4 text-[#afafaf] text-center text-xl space-x-3">

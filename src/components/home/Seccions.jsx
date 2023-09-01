@@ -8,7 +8,7 @@ const Seccions = () => {
   return (
     <>
    
-      <div className="md:gap-5 gap-10 md:flex-row md:justify-around flex mt-20 flex-col justify-center items-center w-auto h-auto md:mx-10 ">
+      <div className="gap-10 md:flex-row md:justify-around flex mt-20 flex-col justify-center items-center w-auto h-auto md:mx-10 ">
         <div className="md:w-2/5 w-3/4 h-fit relative flex flex-col items-center justify-center hover:opacity-80  cursor-pointer shadow-lg shadow-slate-700 overflow-hidden">
           <img
             src={catHombre}

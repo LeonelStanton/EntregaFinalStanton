@@ -16,8 +16,8 @@ const ItemCount = ({initial, onAdd, openModal, talle}) => {
   };
   
   return (
-    <div className="flex w-full flex-col md:flex-row">
-      <div className="flex justify-between border-[1px] border-slate-200 px-3 py-2 md:w-1/5 w-1/2 mx-auto md:mx-0 ">
+    <div className="flex w-full flex-col md:flex-row  sm:px-10 lg:px-4 justify-center items-center">
+      <div className="flex justify-between border-[1px] border-slate-200 px-3 py-2 md:w-1/4 w-1/2 mx-auto md:mx-0 ">
         <button
           onClick={restar}
           className="text-xl text-slate-400 mr-4 font-bold"
@@ -32,7 +32,7 @@ const ItemCount = ({initial, onAdd, openModal, talle}) => {
           +
         </button>
       </div>
-      <div className="w-4/5 md:ml-4 mx-auto mt-4 md:mt-0">
+      <div className="w-3/4  md:ml-4 mx-auto mt-4 md:mt-0">
         
       {talle==""? (<button 
       

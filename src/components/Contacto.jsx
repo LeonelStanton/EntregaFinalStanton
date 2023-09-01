@@ -44,7 +44,7 @@ const Contacto = () => {
               </div>
             </div>
           </div>
-          <div className="lg:w-3/5 w-full px-10 lg:px-0 bg-white flex flex-col md:ml-auto md:py-8 mt-8 md:mt-0">
+          <div className="lg:w-3/5 w-full md:px-5 bg-white flex flex-col md:ml-auto md:py-8 mt-8 md:mt-0">
             <h2 className="text-gray-900 mb-1 text-3xl font-extrabold tracking-[.10em]">
               CONTACTO
             </h2>
@@ -104,7 +104,7 @@ const Contacto = () => {
                 className="w-full bg-white  border border-gray-300 focus:border-neutral-700 focus:ring-2 focus:ring-neutral-50 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
               ></textarea>
             </div>
-            <button className="text-white bg-neutral-900 border-0 py-2 px-6 focus:outline-none hover:bg-neutral-600  text-lg w-1/3">
+            <button className="text-white bg-neutral-900 border-0 py-2 px-6 focus:outline-none hover:bg-neutral-600  text-lg w-2/3 sm:w-1/3">
               ENVIAR
             </button>
             <p className="text-xs text-gray-500 mt-3">* Campos obligatorios</p>

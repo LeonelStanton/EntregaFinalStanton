@@ -66,7 +66,7 @@ const ItemList = ({ productos, categoria }) => {
                   <option value="camisas">Camisas</option>
                 </select>
               </div>
-              <div className="flex gap-5 p-4 ">
+              <div className="flex gap-5 p-4 flex-col sm:flex-row ">
                 <label htmlFor="precio">Precio a partir de:</label>
                 <input
                   type="range"
@@ -76,8 +76,8 @@ const ItemList = ({ productos, categoria }) => {
                   onChange={handleChangeMinPrice}
                   value={minPrice}
                   className="rango"
-                />
-                <span>${minPrice}</span>
+                  />
+                  <span>${minPrice}</span>
               </div>
             </div>
           )}
@@ -103,8 +103,9 @@ const ItemList = ({ productos, categoria }) => {
                
              </select>
            </div>
-           <div className="flex gap-5 p-4 ">
+           <div className="flex gap-5 p-4 flex-col sm:flex-row ">
              <label htmlFor="precio">Precio a partir de:</label>
+             <div>
              <input
                type="range"
                id="precio"
@@ -112,9 +113,10 @@ const ItemList = ({ productos, categoria }) => {
                max="8999"
                onChange={handleChangeMinPrice}
                value={minPrice}
-               className="rango"
+               className="rango mb-5 md:mb-0"
              />
-             <span>${minPrice}</span>
+             <span className="sm:ml-3 ml-0">${minPrice}</span>
+             </div>
            </div>
          </div>
           )}
@@ -134,7 +136,7 @@ const ItemList = ({ productos, categoria }) => {
                 
               </select>
             </div>
-            <div className="flex gap-5 p-4 ">
+            <div className="flex gap-5 p-4 flex-col sm:flex-row ">
               <label htmlFor="precio">Precio a partir de:</label>
               <input
                 type="range"
@@ -143,14 +145,14 @@ const ItemList = ({ productos, categoria }) => {
                 max="2999"
                 onChange={handleChangeMinPrice}
                 value={minPrice}
-                className="rango"
-              />
-              <span>${minPrice}</span>
+                className="rango mb-5 md:mb-0"
+                />
+                <span className="sm:ml-3 ml-0">${minPrice}</span>
             </div>
           </div>
           )}
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 items-center grid-cols-1 gap-16 px-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 items-center grid-cols-1 gap-16 ">
           
           {filteredProducts.map((p) => {
             return (

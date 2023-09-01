@@ -1,5 +1,4 @@
 import fondo2 from "../../assets/fondo2.png";
-import fondo1 from "../../assets/fondo1.jpg";
 import Iframe from 'react-iframe'
 import { useSearchContext } from "../context/SearchContext";
 import Item from "../Item";
@@ -41,6 +40,7 @@ export default function Slider2() {
         <h1 className="text-3xl font-extrabold tracking-[.30em] m-auto mb-5">
           COLECCION 23
         </h1>
+        <div className=" ">
         <Swiper
         breakpoints={{
           // when window width is >= 640px
@@ -49,13 +49,13 @@ export default function Slider2() {
             spaceBetween:10,
           },
 
-          480: {
+          768: {
             
             slidesPerView: 2,
             spaceBetween:10,
           },
           // when window width is >= 768px
-          768: {
+          1024: {
             slidesPerView: 3,
             spaceBetween:10,
             
@@ -69,11 +69,11 @@ export default function Slider2() {
           }}
           navigation={true}
           modules={[Navigation]}
-          className="mySwiper mb-10 py-20 "
+          className="mySwiper mb-10 py-20 px-5 "
         >
           {products.slice(14, 20).map((p) => {
             return (
-              <SwiperSlide key={p.id} className="px-5 lg:px-14 " >
+              <SwiperSlide key={p.id} className="px-5 " >
                 <Item
                   id={p.id}
                   nombre={p.nombre}
@@ -84,7 +84,7 @@ export default function Slider2() {
             );
           })}
         </Swiper>
-
+         </div>
         <div className="w-fit h-fit">
         <img src={fondo2} alt="" className="h-auto  w-full " />
       </div>

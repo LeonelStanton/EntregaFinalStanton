@@ -32,19 +32,6 @@ const [loading,setLoading]=useState(true)
             )
 	}, [id]);
    
-
-
-  /*let estaProduc=!isNaN(producto.precio);
-
-  
- /* useEffect(()=>{
-  setLoading(true)
- setTimeout(()=>{
-    setLoading(false)
-   
-    
-  },1000)
- },[] ) */
    
 
  if (producto) {

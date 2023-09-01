@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import CartWidget from "./CartWidget";
 import Logo from "../../assets/Logo.png";
 import { links } from "./Mylinks";
-import { NavLink,Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import Search from "./Search";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
-  const [heading, setHeading] = useState("");
-  const [subHeading, setSubHeading] = useState("");
+
+
   return (
     <nav className="bg-black fixed z-40 w-full top-0">
       <div className="flex items-center font-medium justify-around  ">
@@ -24,10 +24,15 @@ const NavBar = () => {
           </div>
         </div>
         <ul className="md:flex hidden uppercase items-center gap-8 md:gap-2 lg:gap-8  text-white text-base md:text-sm lg:text-base">
-          <li>
-            <NavLink
-              to="/"
-              className="py-7 px-3 inline-block cursor-pointer hover:text-gray-300"
+          <li className="hover:text-gray-300 ">
+            <NavLink 
+             to="/"
+               
+             className={(navData) =>
+              navData.isActive
+                ? ' py-2 px-3  rounded border-double inline-block cursor-pointer border-t-4 border-b-4 border-y-white hover:border-neutral-300'
+                : 'py-2 px-3  rounded border-double  inline-block cursor-pointer  hover:border-neutral-300'
+            }
             >
               INICIO
             </NavLink>
@@ -36,49 +41,32 @@ const NavBar = () => {
             <div className="z-20" key={link.name}>
               <div className="px-3 text-left group">
                 <h1
-                  className="py-7 flex justify-between items-center md:pr-0 pr-5 group hover:text-gray-300 cursor-pointer"
-                  onClick={() => {
-                    heading !== link.name
-                      ? setHeading(link.name)
-                      : setHeading("");
-                    setSubHeading("");
-                  }}
+                  className="flex justify-between items-center md:pr-0  group hover:text-gray-300 "
+                 
                 >
-                  <NavLink to={`/category/${link.name}`}>{link.name}</NavLink>
+                  <NavLink to={`/category/${link.name}`}
+                  className={(navData) =>
+                    navData.isActive
+                      ? ' py-2 px-3  rounded border-double inline-block cursor-pointer border-t-4 border-b-4 border-y-white hover:border-neutral-300'
+                      : 'py-2 px-3  rounded border-double  inline-block cursor-pointer  hover:border-neutral-300'
+                  }
+                  >{link.name}</NavLink>
 
-                  <span className="text-xl md:hidden inline">
-                    <ion-icon
-                      name={`${
-                        heading === link.name ? "chevron-up" : "chevron-down"
-                      }`}
-                    ></ion-icon>
-                  </span>
-                  <span className="text-xl md:mt-1 md:ml-2  md:block hidden group-hover:rotate-180 group-hover:-mt-2">
-                    <ion-icon name="chevron-down"></ion-icon>
-                  </span>
+                  
                 </h1>
-                {link.submenu && (
-                  <div>
-                    <div className=" absolute top-22 hidden group-hover:md:block hover:md:block w-full left-0">
-                      <div className="bg-neutral-900 py-5 grid grid-cols-3 gap-5 w-full justify-items-center">
-                        {link.sublinks.map((mysublinks) => (
-                          <div key={mysublinks.Head}>
-                            <h1 className="text-sm font-semibold text-white cursor-pointer hover:underline underline-offset-4 decoration-2 decoration-white py-2 rounded-lg px-5">
-                              {mysublinks.Head}
-                            </h1>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
+              
               </div>
             </div>
           ))}
-          <li>
+          <li className="hover:text-gray-300">
             <NavLink
               to="/contacto"
-              className="py-7 px-3 inline-block cursor-pointer hover:text-gray-300"
+              className={(navData) =>
+                navData.isActive
+                  ? ' py-2 px-3  rounded border-double inline-block cursor-pointer border-t-4 border-b-4 border-y-white hover:border-neutral-300'
+                  : 'py-2 px-3  rounded border-double  inline-block cursor-pointer  hover:border-neutral-300'
+              }
+            
             >
               CONTACTO
             </NavLink>
@@ -96,7 +84,7 @@ const NavBar = () => {
         {/* Responsive*/}
         <ul
           className={`
-        md:hidden bg-slate-600 fixed w-full top-20 overflow-y-auto bottom-0 py-6 pl-4 z-50
+        md:hidden bg-slate-300 fixed w-1/2 top-[88px] overflow-y-auto bottom-0 border-r-2 border-slate-400 py-6 px-7 z-50
         duration-500 ${open ? "left-0" : "left-[-100%]"}
         `}
         >
@@ -104,7 +92,7 @@ const NavBar = () => {
             <Link 
               to="/"
               onClick={() => setOpen(!open)}
-              className="py-7 px-3 inline-block cursor-pointer hover:text-gray-300"
+              className="py-7 px-3 inline-block cursor-pointer hover:text-gray-500"
             >
               Inicio
             </Link>
@@ -113,74 +101,20 @@ const NavBar = () => {
             <div className="z-20" key={link.name}>
               <div className="px-3 text-left group">
                 <h1
-                  className="py-7 flex justify-between items-center md:pr-0 pr-5 group hover:text-gray-300 cursor-pointer"
+                  className="py-7 flex justify-between items-center md:pr-0  group hover:text-gray-500 cursor-pointer"
                   
                 >
                   <NavLink to={`/category/${link.name}`} onClick={() => setOpen(!open)}>{link.name}</NavLink>
 
-                  <span className="text-xl md:hidden inline" onClick={() => {
-                    heading !== link.name
-                      ? setHeading(link.name)
-                      : setHeading("");
-                    setSubHeading("");
-                  }}>
-                    <ion-icon
-                      name={`${
-                        heading === link.name ? "chevron-up" : "chevron-down"
-                      }`}
-                    ></ion-icon>
-                  </span>
-                  <span className="text-xl md:mt-1 md:ml-2  md:block hidden group-hover:rotate-180 group-hover:-mt-2">
-                    <ion-icon name="chevron-down"></ion-icon>
-                  </span>
+                 
                 </h1>
-                {link.submenu && (
-                  <div>
-                    <div className=" absolute top-22 hidden group-hover:md:block hover:md:block w-full left-0 ">
-                      <div className="bg-neutral-900 py-5 grid grid-cols-3 gap-5 w-full justify-items-center">
-                        {link.sublinks.map((mysublinks) => (
-                          <div key={mysublinks.Head}>
-                            <h1 className="text-sm font-semibold text-white cursor-pointer hover:underline underline-offset-4 decoration-2 decoration-white py-2 rounded-lg px-5">
-                              {mysublinks.Head}
-                            </h1>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
+             
               </div>
               {/* Mobile menus */}
           <div 
-            className={`
-            ${heading === link.name ? "md:hidden" : "hidden"}
-          `} 
+            
           >
-            {/* sublinks */}
-            {link.sublinks.map((slinks) => (
-             
-              <div key={slinks.Head}>
-                <div >
-                  <h1 
-                    onClick={() =>
-                      subHeading !== slinks.Head
-                        ? setSubHeading(slinks.Head)
-                        : setSubHeading("")
-                    }
-                    className="py-4 pl-7 font-semibold md:pr-0 pr-5 flex justify-between items-center cursor-pointer"
-                  >
-                    {slinks.Head}
-                     
-                   
-                    
-                  </h1>
-
-                  
-                 
-                </div>
-              </div>
-              
-            ))}
+          
           </div>
             </div>
           ))}
@@ -188,7 +122,7 @@ const NavBar = () => {
             <Link
               to="/contacto"
               onClick={() => setOpen(!open)}
-              className="py-7 px-3 inline-block cursor-pointer hover:text-gray-300"
+              className="py-7 px-3 inline-block cursor-pointer hover:text-gray-500"
             >
               Contacto
             </Link>

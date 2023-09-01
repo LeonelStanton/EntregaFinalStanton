@@ -80,7 +80,7 @@ const ItemListContainer = () => {
 
       :
       (
-      <div className="relative mt-28 z-10 h-full">
+      <div className="relative flex flex-col items-center px-16 mt-28 z-10 h-full">
         <ItemList productos={products} categoria={categoria} />
       </div>
     )

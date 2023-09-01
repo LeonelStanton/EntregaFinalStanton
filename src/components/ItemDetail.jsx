@@ -5,6 +5,7 @@ import tarjeta from "../assets/tarjeta-de-credito.png";
 import camion from "../assets/enviado.png";
 import cambio from "../assets/recargar.png";
 import Modals from "./Modals";
+import InnerImageZoom from "react-inner-image-zoom";
 import { useCartContext } from "./context/CartContext";
 
 const ItemDetail = ({ producto }) => {
@@ -30,15 +31,16 @@ const ItemDetail = ({ producto }) => {
         key={producto.id}
         className="flex items-center justify-center mt-44 mb-12"
       >
-        <div className="flex lg:flex-row flex-col md:px-20 px-10 text-gray-600">
-          <div className="w-auto h-auto rounded relative overflow-hidden">
-            <img
-              alt="ecommerce"
-              className=" w-full h-full object-cover  transition duration-500 bg-center bg-cover ease-out hover:scale-125"
+        <div className="flex lg:flex-row flex-col px-10  text-gray-600 items-center justify-center ">
+          <div className="w-auto h-auto rounded ">
+            <InnerImageZoom
               src={producto.img}
+              zoomSrc={producto.img2}
+              zoomType="hover"
+              zoomPreload={true}
             />
           </div>
-          <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+          <div className="lg:w-1/2 w-full lg:pl-7 lg:py-10 mt-6 lg:mt-0 flex flex-col  sm:px-10 md:px-20 lg:px-16 ">
             <h1 className="text-gray-900 text-3xl title-font font-semibold mb-1">
               {producto.nombre}
             </h1>
@@ -103,7 +105,7 @@ const ItemDetail = ({ producto }) => {
                 </div>
               </div>
             </div>
-            <div className="flex">
+            <div className="flex ">
               <ItemCount
                 initial={1}
                 talle={talle}
