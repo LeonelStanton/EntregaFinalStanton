@@ -2,7 +2,7 @@
 
 El enfoque utilizado fue lograr un e-commerce de un local de ropa lo más fiel posible a los ya conocidos. En el inicio se muestran 6 productos de todo el catálogo para dar una muestra general de la página, el usuario a su vez puede seleccionar una categoría y ver todo el catálogo de la misma. En cada una de ellas se le agregó un filtro extra para poder seleccionar el tipo de prenda, cada prenda tiene un talle diferente dependiendo si es de hombre, mujer o niño, por lo cual pueden comprarse 2 prendas iguales pero de diferente talle. 
 También se le agregó una barra de búsqueda para que el usuario tenga más interacción y pueda ingresar el tipo de prenda que desea.
-El carrito es dinámico durante toda la experiencia y su valor es mutable, una vez que se eligieron los productos deseados y se toca el botón comprar el usuario es dirigido a un formulario que tiene validación en todos los campos. Finalmente, el usuario recibirá una id con la orden de su pedido.
+El carrito es dinámico durante toda la experiencia y su valor es mutable, los productos que se carguen en el mismo se mantendran guardados en el Local Storage del navegador. Una vez que se eligieron las prendas deseadas y se clickea el botón comprar el usuario es dirigido a un formulario que tiene validación en todos los campos. Finalmente, el usuario recibirá una id con la orden de su pedido.
 
 # Vista Previa
 
