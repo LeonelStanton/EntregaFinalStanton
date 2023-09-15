@@ -1,4 +1,4 @@
-Ecommerce de un local de ropa creado en React con recuperación de datos de Firebase.
+Ecommerce de un local de ropa creado en React con recuperación de datos de Firebase. Incluye validación de formulario y orden de compra.
 
 
 # Vista Previa
