@@ -1,3 +1,5 @@
+Ecommerce de un local de ropa con recuperacion de datos de Firebase.
+
 
 # Vista Previa
 
@@ -6,13 +8,13 @@
 
 ## Librerías y npms utilizados
 
- Además de las vistas en clase se utilizaron las siguientes herramientas:
-
+* Firebase
 * Tailwind
 * Swiper
 * Yup
 * Ionicons
 * Fontawesome
+* React Router Dom
 * React Iframe
 * React Spinners
 * React Hook Form
