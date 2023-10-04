@@ -22,5 +22,3 @@ Ecommerce de un local de ropa diseñado en React con recuperación de datos de F
 
 ## 🛠️ Abre y ejecuta el proyecto
 
-- npm install
-- npm run dev
